@@ -11,7 +11,7 @@ use web_sys::{
 
 pub static MAX_WORKERS: usize = 512;
 
-#[wasm_bindgen]
+// #[wasm_bindgen]
 pub struct WorkerPool {
     pool_state: Rc<PoolState>,
 }
@@ -32,7 +32,7 @@ struct Task {
     callable: Box<dyn FnOnce() + Send>,
 }
 
-#[wasm_bindgen]
+// #[wasm_bindgen]
 impl WorkerPool {
     /// Creates a new `WorkerPool` which immediately creates `initial` workers.
     ///
@@ -44,7 +44,7 @@ impl WorkerPool {
     ///
     /// Returns any error that may happen while a JS web worker is created and a
     /// message is sent to it.
-    #[wasm_bindgen(constructor)]
+    // #[wasm_bindgen(constructor)]
     pub fn new() -> WorkerPool {
         let worker_pool = WorkerPool {
             pool_state: Rc::new(PoolState {
